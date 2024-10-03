@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="MediatR" Version="12.2.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BingSafety.Domain\BingSafety.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Contacts\Commands\" />
+    <Folder Include="Features\Contacts\Queries\" />
+    <Folder Include="Features\EmergencyEvents\Commands\CreateEmergencyEvent\" />
+    <Folder Include="Features\EmergencyEvents\Commands\DeleteEmergencyEvent\" />
+  </ItemGroup>
+
+</Project>
