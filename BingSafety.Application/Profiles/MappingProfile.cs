@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventById;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventList;
+using BingSafety.Application.Features.EventStatuses.Queries.GetEventStatusList;
 using BingSafety.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace BingSafety.Application.Profiles
         public MappingProfile() { 
             CreateMap<EmergencyEvent, EmergencyEventListVm>().ReverseMap();
             CreateMap<EmergencyEvent, EmergencyEventByIdVm>().ReverseMap();
+            CreateMap<EventStatus, EventStatusListVm>().ReverseMap();
         }
     }
 }

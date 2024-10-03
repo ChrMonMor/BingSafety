@@ -21,8 +21,7 @@
     <Folder Include="Features\Contacts\Queries\" />
     <Folder Include="Features\EmergencyEvents\Commands\CreateEmergencyEvent\" />
     <Folder Include="Features\EmergencyEvents\Commands\DeleteEmergencyEvent\" />
-    <Folder Include="Features\EventStatus\Commands\" />
-    <Folder Include="Features\EventStatus\Queries\" />
+    <Folder Include="Features\EventStatuses\Commands\" />
   </ItemGroup>
 
 </Project>
