@@ -22,7 +22,7 @@ namespace BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEv
         }
         public async Task<List<EmergencyEventListVm>> Handle(GetEmergencyEventsListQuery request, CancellationToken cancellationToken)
         {
-            var allEmergencyEvents = (await _emergencyEvent.ListAllAsync()).OrderBy(x => x.Date);
+            var allEmergencyEvents = (await _emergencyEvent.ListAllAsync()).OrderBy(x => x.CreatedDate);
 
             return _mapper.Map<List<EmergencyEventListVm>>(allEmergencyEvents);
         }
