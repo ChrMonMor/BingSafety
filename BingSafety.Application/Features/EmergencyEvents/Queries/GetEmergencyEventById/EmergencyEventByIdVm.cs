@@ -7,5 +7,12 @@ using System.Threading.Tasks;
 
 namespace BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventById {
     public class EmergencyEventByIdVm {
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }
