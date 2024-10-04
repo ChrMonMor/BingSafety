@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSafety.Domain", "BingSa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSafety.Application", "BingSafety.Application\BingSafety.Application.csproj", "{0CE821F2-9D1F-472D-BEAA-2340CB1BB67F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSafety.Persistence", "BingSafety.Persistence\BingSafety.Persistence.csproj", "{F1C290AC-10FB-4990-9DDF-2277B07B8EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSafety.Api", "BingSafety.Api\BingSafety.Api.csproj", "{70D70348-DE1C-4204-B11B-72A6DD212A42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0CE821F2-9D1F-472D-BEAA-2340CB1BB67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CE821F2-9D1F-472D-BEAA-2340CB1BB67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CE821F2-9D1F-472D-BEAA-2340CB1BB67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C290AC-10FB-4990-9DDF-2277B07B8EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C290AC-10FB-4990-9DDF-2277B07B8EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C290AC-10FB-4990-9DDF-2277B07B8EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C290AC-10FB-4990-9DDF-2277B07B8EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D70348-DE1C-4204-B11B-72A6DD212A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D70348-DE1C-4204-B11B-72A6DD212A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D70348-DE1C-4204-B11B-72A6DD212A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D70348-DE1C-4204-B11B-72A6DD212A42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +56,8 @@ Global
 		{02EAACFB-EA2C-481D-9D45-BCAAD411B418} = {7783EAD6-5C21-46A0-8F1F-6F5E064D143F}
 		{2C5985E1-D888-462B-9B6D-BC9843E6B5D7} = {E9BB0973-85D7-4176-8CF9-E05286CA2163}
 		{0CE821F2-9D1F-472D-BEAA-2340CB1BB67F} = {E9BB0973-85D7-4176-8CF9-E05286CA2163}
+		{F1C290AC-10FB-4990-9DDF-2277B07B8EDF} = {77461175-374E-4D17-8C0C-EAEAC0F6CBFD}
+		{70D70348-DE1C-4204-B11B-72A6DD212A42} = {92766AC7-DA7C-4332-9E47-0E87C5C2D65A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {089612F0-0085-4A13-B508-02C0D3C4140E}
