@@ -8,12 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 
 namespace BingSafety.Persistence {
     public static class PersistanceServiceRegistration {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration) {
+            var mongoClient = new MongoClient(configuration.GetConnectionString("MongoDbConnectionString"));
             services.AddDbContext<BingSafetyDbContext>(options => {
-                options.UseMongoDB(configuration.GetConnectionString("MongoDbConnectionString"), configuration.GetSection("DatabaseName")["MongoDB"]);   
+                options.UseMongoDB(mongoClient, configuration.GetSection("DatabaseName")["MongoDB"]);   
             });
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
