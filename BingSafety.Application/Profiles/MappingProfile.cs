@@ -4,6 +4,7 @@ using BingSafety.Application.Features.EmergencyEvents.Commands.DeleteEmergencyEv
 using BingSafety.Application.Features.EmergencyEvents.Commands.UpdateEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventById;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventList;
+using BingSafety.Application.Features.EventStatuses.Commands.CreateEventStatus;
 using BingSafety.Application.Features.EventStatuses.Queries.GetEventStatusList;
 using BingSafety.Domain.Models;
 
@@ -13,11 +14,12 @@ namespace BingSafety.Application.Profiles
         public MappingProfile() { 
             CreateMap<EmergencyEvent, EmergencyEventListVm>().ReverseMap();
             CreateMap<EmergencyEvent, EmergencyEventByIdVm>().ReverseMap();
-            CreateMap<EventStatus, EventStatusListVm>().ReverseMap();
-
             CreateMap<EmergencyEvent, CreateEmergencyEventCommand>().ReverseMap();
             CreateMap<EmergencyEvent, UpdateEmergencyEventCommand>().ReverseMap();
             CreateMap<EmergencyEvent, DeleteEmergencyEventCommand>().ReverseMap();
+
+            CreateMap<EventStatus, EventStatusListVm>().ReverseMap();
+            CreateMap<EventStatus, CreateEventStatusCommand>().ReverseMap();
         }
     }
 }
