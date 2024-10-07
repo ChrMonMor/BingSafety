@@ -25,7 +25,7 @@ namespace BingSafety.Application.Features.EventStatuses.Queries.GetEventStatusLi
         public async Task<List<EventStatusListVm>> Handle(GetEventStatusListQuery request, CancellationToken cancellationToken)
         {
 
-            var allEmergencyEvents = (await _eventStatus.ListAllAsync()).OrderBy(x => x.Title);
+            var allEmergencyEvents = (await _eventStatus.ReadOnlyListAllAsync()).OrderBy(x => x.Title);
 
             return _mapper.Map<List<EventStatusListVm>>(allEmergencyEvents);
         }

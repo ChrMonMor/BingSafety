@@ -1,5 +1,6 @@
 ﻿using BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Commands.DeleteEmergencyEvent;
+using BingSafety.Application.Features.EmergencyEvents.Commands.RemoveUserEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Commands.UpdateEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventById;
 using BingSafety.Application.Features.EmergencyEvents.Queries.GetEmergencyEventList;
@@ -52,6 +53,15 @@ namespace BingSafety.Api.Controllers {
         public async Task<ActionResult> Delete(Guid id) {
             var deleteEmergencyEventCommand = new DeleteEmergencyEventCommand() { Id = id };
             await _mediator.Send(deleteEmergencyEventCommand);
+            return NoContent();
+        }
+        [HttpDelete("remove/{id}", Name = "RemoveUser")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult> RemoveUser(Guid id) {
+            var removeUserEmergencyEventCommand = new RemoveUserEmergencyEventCommand() { UserId = id };
+            await _mediator.Send(removeUserEmergencyEventCommand);
             return NoContent();
         }
     }

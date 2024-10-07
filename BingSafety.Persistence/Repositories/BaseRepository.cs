@@ -29,7 +29,7 @@ namespace BingSafety.Persistence.Repositories {
             return await _dbContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync() {
+        public async Task<IReadOnlyList<T>> ReadOnlyListAllAsync() {
             return await _dbContext.Set<T>().ToListAsync();
         }
 
