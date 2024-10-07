@@ -8,6 +8,7 @@ namespace BingSafety.Application.Responses {
     public class BaseResponse {
         public BaseResponse() { 
             Success = true;
+            Message = string.Empty;
         }
         public BaseResponse(string message) {
             Success = true;
