@@ -21,7 +21,6 @@
   <ItemGroup>
     <Folder Include="Features\Contacts\Commands\" />
     <Folder Include="Features\Contacts\Queries\" />
-    <Folder Include="Features\EventStatuses\Commands\CreateEventStatus\" />
     <Folder Include="Features\EventStatuses\Queries\GetEventStatusById\" />
   </ItemGroup>
 

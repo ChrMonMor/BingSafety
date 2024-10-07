@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergencyEvent {
-    public class CreateEmergencyEventCommand : IRequest<Guid> {
+    public class CreateEmergencyEventCommand : IRequest<CreateEmergencyEventCommandResponse> {
+        public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }

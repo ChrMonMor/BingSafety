@@ -20,12 +20,18 @@ namespace BingSafety.Api {
                 .AllowCredentials()
                 ));
 
+            builder.Services.AddSwaggerGen();
+
             return builder.Build();
         }
 
         public static WebApplication ConfigurePipline(this WebApplication app) { 
             // middelware here!
             app.UseCors("open");
+            if (app.Environment.IsDevelopment()) { 
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
             app.UseHttpsRedirection();
             app.MapControllers();
 

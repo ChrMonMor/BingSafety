@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergencyEvent {
-    public class CreateEmergencyEventHandler : IRequestHandler<CreateEmergencyEventCommand, Guid> {
+    public class CreateEmergencyEventHandler : IRequestHandler<CreateEmergencyEventCommand, CreateEmergencyEventCommandResponse> {
 
         private readonly IEmergencyEventRepository _emergencyEventRepository;
         private readonly IMapper _mapper;
@@ -19,19 +19,26 @@ namespace BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergen
             _mapper = mapper;
         }
 
-        public async Task<Guid> Handle(CreateEmergencyEventCommand request, CancellationToken cancellationToken) {
-            var emergencyEvent = _mapper.Map<EmergencyEvent>(request);
+        public async Task<CreateEmergencyEventCommandResponse> Handle(CreateEmergencyEventCommand request, CancellationToken cancellationToken) {
+             var createEmergencyEventCommandResponse = new CreateEmergencyEventCommandResponse();
 
             var validator = new CreateEmergencyEventValidator(_emergencyEventRepository);
             var validatorResult = await validator.ValidateAsync(request);
 
             if (validatorResult.Errors.Count() > 0) {
-                throw new Exceptions.ValidationException(validatorResult);
+                createEmergencyEventCommandResponse.Success = false;
+                createEmergencyEventCommandResponse.ValidationErrors = new List<string>();
+                foreach (var error in validatorResult.Errors) {
+                    createEmergencyEventCommandResponse
+                        .ValidationErrors.Add(error.ErrorMessage);
+                }
             }
+
+            var emergencyEvent = _mapper.Map<EmergencyEvent>(request);
 
             emergencyEvent = await _emergencyEventRepository.AddAsync(emergencyEvent);
 
-            return emergencyEvent.Id;
+            return createEmergencyEventCommandResponse;
         }
     }
 }
