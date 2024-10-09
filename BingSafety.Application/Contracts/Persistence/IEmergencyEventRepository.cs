@@ -9,6 +9,6 @@ namespace BingSafety.Application.Contracts.Persistence {
     public interface IEmergencyEventRepository : IAsyncRepository<EmergencyEvent> {
 
         Task<List<EmergencyEvent>> ListAllAsync();
-        Task RemoveUser(List<EmergencyEvent> ts);
+        Task RemoveUser(List<EmergencyEvent> editableList);
     }
 }
