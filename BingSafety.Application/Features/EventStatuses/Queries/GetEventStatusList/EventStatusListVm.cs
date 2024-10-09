@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BingSafety.Application.Features.EventStatuses.Queries.GetEventStatusList
 {
-    public class EventStatusListVm
-    {
+    public class EventStatusListVm {
+        public Guid Id { get; set; }
+        public string Title { get; set; }
     }
 }

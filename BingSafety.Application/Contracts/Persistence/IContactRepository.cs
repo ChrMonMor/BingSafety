@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 
 namespace BingSafety.Application.Contracts.Persistence {
     public interface IContactRepository : IAsyncRepository<Contact> {
+        Task SingleNumber(string number, string message);
     }
 }

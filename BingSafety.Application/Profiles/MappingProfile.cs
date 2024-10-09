@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BingSafety.Application.Features.Contacts.Commands.ContactSingleNumber;
 using BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Commands.DeleteEmergencyEvent;
 using BingSafety.Application.Features.EmergencyEvents.Commands.UpdateEmergencyEvent;
@@ -20,6 +21,8 @@ namespace BingSafety.Application.Profiles
 
             CreateMap<EventStatus, EventStatusListVm>().ReverseMap();
             CreateMap<EventStatus, CreateEventStatusCommand>().ReverseMap();
+
+            CreateMap<Contact, ContactSingleNumberCommand>().ReverseMap();
         }
     }
 }
