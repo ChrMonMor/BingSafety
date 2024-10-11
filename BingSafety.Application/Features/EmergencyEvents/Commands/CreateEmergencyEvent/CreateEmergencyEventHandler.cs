@@ -20,7 +20,7 @@ namespace BingSafety.Application.Features.EmergencyEvents.Commands.CreateEmergen
         }
 
         public async Task<CreateEmergencyEventCommandResponse> Handle(CreateEmergencyEventCommand request, CancellationToken cancellationToken) {
-             var createEmergencyEventCommandResponse = new CreateEmergencyEventCommandResponse();
+            var createEmergencyEventCommandResponse = new CreateEmergencyEventCommandResponse();
 
             var validator = new CreateEmergencyEventValidator(_emergencyEventRepository);
             var validatorResult = await validator.ValidateAsync(request);
